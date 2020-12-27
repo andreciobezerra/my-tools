@@ -46,3 +46,7 @@ nvm alias default node
 
 #Firebase CLI
 sudo npm i firebase-tools -g
+
+#Install zsh
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+which zsh > chsh -s 
