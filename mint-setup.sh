@@ -6,7 +6,14 @@ then
 fi
 
 sudo apt update
-sudo apt install software-properties-common apt-transport-https -y
+sudo apt install software-properties-common apt-transport-https ca-certificates curl -y
+
+#Docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(. /etc/os-release; echo "$UBUNTU_CODENAME") stable"
+sudo apt update
+sudo apt install docker-ce docker-compose -y
+sudo usermod -aG docker $USER
 
 #Installing Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /tmp/chrome.deb
@@ -27,25 +34,28 @@ wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
 sudo apt update
 sudo apt install insomnia
 
-#MongoDB
-
-sudo apt install MongoDB
-
-#Robo3T
-
- wget https://download-test.robomongo.org/linux/robo3t-1.4.2-linux-x86_64-8650949.tar.gz -O /tmp/robo3t.tar.gz
- mkdir -p /data/robo3t
- tar -xvzf /tmp/robo3t.tar.gz -C /data/robo3t
-
 #NVM 
 sudo wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 
-#Node LTS
-sudo nvm install --lts
-nvm alias default node
+#Node Latest
+sudo nvm install node
 
-#Firebase CLI
-sudo npm i firebase-tools -g
+#Yarn
+npm i yarn -g
+
+#Github CLI
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+sudo apt-add-repository https://cli.github.com/packages
+sudo apt update
+sudo apt install gh
+
+#Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+#Golang
+wget https://golang.org/dl/go1.16.4.linux-amd64.tar.gz -O /tmp/golang.tar.gz
+tar /usr/local -xzf /tmp/golang.tar.gz
+echo "export PATH=$PATH:/usr/local/go/bin" >> $HOME/.profile
 
 #Install zsh
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
