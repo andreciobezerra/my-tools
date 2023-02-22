@@ -31,46 +31,12 @@ require('packer').startup(function(use)
   -- Interface
   use("akinsho/bufferline.nvim")
   use({ "nvim-neo-tree/neo-tree.nvim", branch = "v2.x" })
-  -- :use("nvim-lualine/lualine.nvim")
   -- Color scheme
   use("olimorris/onedarkpro.nvim")
   use("joshdick/onedark.vim")
   -- Embedded terminal
   use("voldikss/vim-floaterm")
 end)
-
--- Autopairs
-require("nvim-autopairs").setup({
-    disable_filetype = { "TelescopePrompt" },
-})
-
--- Colorizer
-require("colorizer").setup()
-
--- Git signs
-require("gitsigns").setup()
-
--- Bufferline
-require("bufferline").setup()
-
--- Lualine
---require("lualine").setup()
-
--- Neo tree
-require("neo-tree").setup({
-  close_if_last_window = false,
-  enable_diagnostics = true,
-  enable_git_status = true,
-  popup_border_style = "rounded",
-  sort_case_insensitive = false,
-  filesystem = {
-    filtered_items = {
-      hide_dotfiles = false,
-      hide_gitignored = false,
-    },
-  },
-  window = { width = 30 },
-})
 
 vim.cmd([[
   augroup packer_user_config
