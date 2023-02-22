@@ -4,7 +4,7 @@ local expr_opts = { noremap = true, expr = true, silent = true }
 
 -- INSERT MODE
 keymap("i", "<C-f>", "<ESC>:Telescope fd<CR>", default_opts)
-keymap("i","<C-t>", "<ESC>:FloatermNew<CR>i", default_opts)
+keymap("i","<C-t>", "<ESC>:FloatermNew<CR>", default_opts)
 keymap("i","<C-w>", "<ESC>:bd<CR>", default_opts)
 keymap("i","<C-S-Down>", "<ESC>:t.<CR>", default_opts)
 

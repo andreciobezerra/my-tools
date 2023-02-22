@@ -3,6 +3,9 @@ require("nvim-autopairs").setup({
     disable_filetype = { "TelescopePrompt" },
 })
 
+--LSP Installer
+require("mason").setup()
+
 -- Colorizer
 require("colorizer").setup()
 
