@@ -9,7 +9,7 @@ keymap("i","<C-S-Down>", "<ESC>:t.<CR>", default_opts)
 
 -- NORMAL MODE
 keymap("n", "<C-e>", ":Telescope fd<CR>", default_opts)
-keymap("n", "<C-k>", ":Legendary<CR>", default_opts)
+keymap("n", "<C-k>", ":Telescope keymaps<CR>", default_opts)
 keymap("n", "<C-t>", ":FloatermNew<CR>", default_opts)
 keymap("n", "<C-f>", ":Telescope live_grep<CR>", default_opts)
 keymap("n", "<C-b>", ":NvimTreeToggle<CR>", default_opts)

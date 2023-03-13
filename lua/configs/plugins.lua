@@ -24,7 +24,6 @@ require('packer').startup(function(use)
   use("windwp/nvim-autopairs")
   use("norcalli/nvim-colorizer.lua")
   use("lewis6991/gitsigns.nvim")
-  use("mrjones2014/legendary.nvim")
   -- Dependencies
   use("nvim-lua/plenary.nvim")
   use("kyazdani42/nvim-web-devicons")

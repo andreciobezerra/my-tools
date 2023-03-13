@@ -34,7 +34,6 @@ require("nvim-treesitter.configs").setup({
     "markdown",
     "markdown_inline",
     "python",
-    "rescript",
     "rust",
     "scss",
     "sql",
@@ -127,16 +126,16 @@ lspconfig.pyright.setup({
   on_attach = no_format
 })
 
--- JavaScript/Typescript
+-- JavaScript/Typescriipt
 lspconfig.tsserver.setup({
   capabilities = caps,
-  on_attach = no_format
+  on_attach = require("lsp-format").on_attach
 })
 
 -- Rust
 lspconfig.rust_analyzer.setup({
-    capabilities = snip_caps,
-  on_attach = no_format
+  capabilities = snip_caps,
+  on_attach = require("lsp-format").on_attach
 })
 
 -- Emmet
